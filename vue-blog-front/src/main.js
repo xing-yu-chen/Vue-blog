@@ -13,6 +13,7 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import Prism from 'prismjs';
 
 import './axios'
+import './permission.js' // 路由拦截
 
 VueMarkdownEditor.use(vuepressTheme, {
   Prism,

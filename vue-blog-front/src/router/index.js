@@ -18,6 +18,9 @@ const routes = [
 	{
 		path: '/blogs/add',
 		name: 'BlogEdit',
+		meta: {
+		    requireAuth: true
+		  },
 		component: BlogEdit
 	},
 	{
@@ -29,6 +32,9 @@ const routes = [
 		//:blogId作为一个参数被传过来
 		path: '/blog/:blogId/edit',
 		name: 'BlogEdit1',
+		meta: {
+		    requireAuth: true
+		  },
 		component: BlogEdit
 	}
 ]
