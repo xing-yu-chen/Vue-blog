@@ -37,7 +37,7 @@ public class AccountController {
         }
         String jwt = jwtUtils.generateToken(user.getId());
         response.setHeader("Authorization", jwt);
-        response.setHeader("Access-control-Expose-Headedrs", "Authorization");
+        response.setHeader("Access-Control-Expose-Headers", "Authorization");
         return Result.succ(MapUtil.builder()
                 .put("id", user.getId())
                 .put("username",user.getUsername())
@@ -51,7 +51,8 @@ public class AccountController {
     @RequiresAuthentication
     @GetMapping("/logout")
     public Result logout(){
+        System.out.println("logout");
         SecurityUtils.getSubject().logout();
-        return Result.succ(null);
+        return Result.succ(200,"退出成功",null);
     }
 }
