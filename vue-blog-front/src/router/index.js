@@ -28,7 +28,7 @@ const routes = [
 	{
 		//:blogId作为一个参数被传过来
 		path: '/blog/:blogId/edit',
-		name: 'BlogEdit',
+		name: 'BlogEdit1',
 		component: BlogEdit
 	}
 ]

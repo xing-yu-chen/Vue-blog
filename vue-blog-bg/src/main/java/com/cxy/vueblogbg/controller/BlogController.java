@@ -34,6 +34,12 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
+    @GetMapping("/blogs/{id}")
+    public Result selectId(@PathVariable(name = "id") Long id){
+        Blog byId = blogService.getById(id);
+        return Result.succ(byId);
+    }
+
     @GetMapping("blogs")
     //defaultValue默认值
     public Result list(@RequestParam(defaultValue = "1") Integer currentPage){
